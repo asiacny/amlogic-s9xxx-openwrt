@@ -250,12 +250,13 @@ on:
         description: "Select kernel version"
         required: false
         default: "6.12.y_6.18.y"
-        type: choice
+        type: string
         options:
           - 5.10.y
           - 5.15.y
           - 6.1.y
           - 6.6.y
+          - 6.6.142
           - 6.12.y
           - 6.18.y
           - 5.10.y_5.15.y
