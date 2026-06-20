@@ -249,8 +249,8 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "6.12.y_6.18.y"
-        type: string
+        default: "6.6.142"
+        type: choice
         options:
           - 5.10.y
           - 5.15.y
