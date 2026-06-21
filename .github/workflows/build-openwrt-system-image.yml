@@ -461,6 +461,7 @@ jobs:
         id: package
         run: |
           cd openwrt/
+          echo "CONFIG_SDK=y" >> .config
           make defconfig
           make download -j8
           find dl -size -1024c -exec ls -l {} \;
@@ -512,6 +513,7 @@ jobs:
           cd openwrt/
           [[ -d "output" ]] || mkdir output
           cp -f bin/targets/*/*/*rootfs.tar.gz output/
+          cp -f bin/targets/*/*/*sdk*.tar.* output/ 2>/dev/null || true
           cp -f .config output/config
           ls -A | grep -vE '^(output|\.ccache)$' | xargs rm -rf || true
 
